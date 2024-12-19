@@ -1,4 +1,4 @@
-import "../app/globals.css";
+import "./header.css";
 
 type HeaderProps = {
   page: string;
