@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Bourgeois";
+  src: url("/Bourgeois-Medium.ttf");
+}
+
+* {
+  margin: 0;
+  font-family: "Bourgeois";
+  font-size: 15px;
+}
+
+header {
+  margin: 10px;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+header > a {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+header > span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 10px;
+  margin: 10px;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.labels {
+  padding: 10px;
+}
+
+.name-label {
+  font-size: 1.5em;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+.rarity-label {
+  text-align: center;
+  display: block;
+  font-size: 1.2em;
+}
+
+/* Rarities */
+.rarity-Base {
+  background: #616264;
+}
+
+.rarity-Sport {
+  background: #3f7482;
+}
+
+.rarity-Special {
+  background: #276d96;
+}
+
+.rarity-Deluxe {
+  background: #6d3b80;
+}
+
+.rarity-Import {
+  background: #b23b14;
+}
+
+.rarity-Exotic {
+  background: #b6950f;
+}
+
+.rarity-Luxury {
+  background: #c16804;
+}
+
+.rarity-BlackMarket {
+  background: #73378f;
+}
+
+.rarity-Premium {
+  background: var(--premium);
+}
