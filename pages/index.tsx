@@ -1,9 +1,9 @@
-import "./index.css";
+import { CSSProperties } from "react";
 
 export default function Home() {
   return (
     <main>
-      <nav>
+      <nav style={styles.nav}>
         <a href="/items/avatars">Avatars</a>
         <a href="/items/banners">Banners</a>
         <a href="/items/bodies">Bodies</a>
@@ -18,3 +18,11 @@ export default function Home() {
     </main>
   );
 }
+
+const styles: Record<string, CSSProperties> = {
+  nav: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+  },
+};

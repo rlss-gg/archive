@@ -1,8 +1,7 @@
 import { ItemType } from "@rlss-gg/items";
-import type { Metadata } from "next";
 import Header from "./Header";
 import Item from "./Item";
-import "./ItemTypePage.css";
+import { CSSProperties } from "react";
 
 type ItemTypePageProps = {
   label: string;
@@ -13,7 +12,7 @@ export default function ItemTypePage(props: ItemTypePageProps) {
   return (
     <main>
       <Header page={props.label} />
-      <div id="container">
+      <div style={styles.container}>
         {props.items
           .toSorted((a, b) => a.name.localeCompare(b.name))
           .map((item) => (
@@ -24,9 +23,12 @@ export default function ItemTypePage(props: ItemTypePageProps) {
   );
 }
 
-export function Metadata(label: string): Metadata {
-  return {
-    title: `${label} | RLSS.GG Database`,
-    description: `All available ${label.toLowerCase()} in Rocket League Sideswipe`,
-  };
-}
+const styles: Record<string, CSSProperties> = {
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, 150px)",
+    gap: "10px",
+    margin: "10px",
+    justifyContent: "center",
+  },
+};
