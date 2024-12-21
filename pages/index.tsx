@@ -22,7 +22,7 @@ export default function Home() {
 const styles: Record<string, CSSProperties> = {
   nav: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     gap: "10px",
   },
 };

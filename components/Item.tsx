@@ -1,4 +1,10 @@
-import { Banner, Decal, endpoint, ItemType, Title } from "@rlss-gg/items";
+import {
+  Banner,
+  Decal,
+  endpoint,
+  ItemType,
+  Item as ItemTypes,
+} from "@rlss-gg/items";
 import Image from "next/image";
 import { CSSProperties } from "react";
 
@@ -15,13 +21,9 @@ export default function Item({ item }: ItemProps) {
     return item.type === "Decal";
   }
 
-  function isTitle(item: ItemType): item is Title {
-    return item.type === "Title";
-  }
-
   return (
     <div
-      style={Object.assign(styles.item, rarity(item.rarity as Rarity))}
+      style={Object.assign(styles.item, rarity(item.rarity))}
       key={item.name + item.rarity + item.type}
     >
       <div style={styles.labels}>
@@ -41,15 +43,15 @@ export default function Item({ item }: ItemProps) {
           width={150}
           height={150}
         />
-        {/* {isBanner(item) && (
+        {isBanner(item) && (
           <Image
             style={styles.image}
             src={endpoint + item.full}
             alt={item.name}
             width={150}
-            height={150}
+            height={36}
           />
-        )} */}
+        )}
       </div>
     </div>
   );
@@ -80,27 +82,16 @@ const styles: Record<string, CSSProperties> = {
   },
   imageContainer: {
     background: "radial-gradient(#000000ff, #00000066)",
-    height: "150px",
     width: "150px",
   },
   image: {
     mixBlendMode: "lighten",
+    display: "block",
   },
 };
 
-type Rarity =
-  | "Base"
-  | "Sport"
-  | "Special"
-  | "Deluxe"
-  | "Import"
-  | "Exotic"
-  | "Luxury"
-  | "Black Market"
-  | "Premium";
-
-const rarity = (rarity: Rarity) => {
-  const colors: Record<Rarity, string> = {
+const rarity = (rarity: ItemTypes.Rarity) => {
+  const colors: Record<ItemTypes.Rarity, string> = {
     Base: "#616264",
     Sport: "#3f7482",
     Special: "#276d96",
