@@ -2,6 +2,7 @@ import { ItemType } from "@rlss-gg/items";
 import Header from "./Header";
 import Item from "./Item";
 import { CSSProperties } from "react";
+import Footer from "./Footer";
 
 type ItemTypePageProps = {
   label: string;
@@ -19,6 +20,7 @@ export default function ItemTypePage(props: ItemTypePageProps) {
             <Item item={item} key={item.name + item.rarity + item.type} />
           ))}
       </div>
+      <Footer />
     </main>
   );
 }
