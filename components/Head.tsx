@@ -1,11 +1,15 @@
+"use client";
+
 import NextHead from "next/head";
 
 type HeadProps = {
-  title: string;
+  title?: string;
 };
 
 export default function Head(props: HeadProps) {
-  const title = `${props.title} | RLSS.GG Database`;
+  const title = props.title
+    ? `${props.title} | RLSS.GG Database`
+    : "RLSS.GG Database";
   const description =
     "A collection of (almost) every item in Rocket League Sideswipe";
   return (
