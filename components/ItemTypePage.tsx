@@ -1,8 +1,11 @@
+"use client";
+
 import { ItemType } from "@rlss-gg/items";
 import Header from "./Header";
 import Item from "./Item";
 import { CSSProperties } from "react";
 import Footer from "./Footer";
+import Head from "./Head";
 
 type ItemTypePageProps = {
   label: string;
@@ -12,6 +15,7 @@ type ItemTypePageProps = {
 export default function ItemTypePage(props: ItemTypePageProps) {
   return (
     <main>
+      <Head title={props.label} />
       <Header page={props.label} />
       <div style={styles.container}>
         {props.items
