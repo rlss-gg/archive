@@ -13,16 +13,16 @@ type ItemTypePageProps = {
 };
 
 export default function ItemTypePage(props: ItemTypePageProps) {
+  props.items.sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <main>
       <Head title={props.label} />
       <Header page={props.label} />
       <div style={styles.container}>
-        {props.items
-          .toSorted((a, b) => a.name.localeCompare(b.name))
-          .map((item) => (
-            <Item item={item} key={item.name + item.rarity + item.type} />
-          ))}
+        {props.items.map((item) => (
+          <Item item={item} key={item.name + item.rarity + item.type} />
+        ))}
       </div>
       <Footer />
     </main>
