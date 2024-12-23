@@ -16,7 +16,7 @@ export default function ItemTypePage(props: ItemTypePageProps) {
         {props.items
           .toSorted((a, b) => a.name.localeCompare(b.name))
           .map((item) => (
-            <Item item={item} />
+            <Item item={item} key={item.name + item.rarity + item.type} />
           ))}
       </div>
     </main>

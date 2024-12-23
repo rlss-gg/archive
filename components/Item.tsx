@@ -22,22 +22,19 @@ export default function Item({ item }: ItemProps) {
   }
 
   return (
-    <div
-      style={Object.assign(styles.item, rarity(item.rarity))}
-      key={item.name + item.rarity + item.type}
-    >
+    <div style={styles.item}>
       <div style={styles.labels}>
         <span style={styles.nameLabel}>
           {isDecal(item) ? item.body + ": " : ""}
           {item.name}
         </span>
-        <span style={styles.rarityLabel}>
+        <span style={{ ...styles.rarityLabel, ...rarity(item.rarity) }}>
           {item.rarity} {item.type}
         </span>
       </div>
       <div style={styles.imageContainer}>
         <Image
-          style={styles.image}
+          style={item.type === "Avatar" ? styles.image : styles.blendedImage}
           src={endpoint + item.thumbnail}
           alt={item.name}
           width={150}
@@ -63,6 +60,8 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
+    border: "2px solid #282B3C",
+    background: "#181B2C",
     borderRadius: "10px",
     overflow: "hidden",
   },
@@ -74,6 +73,7 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     display: "block",
     fontWeight: "bold",
+    color: "#888B9C",
   },
   rarityLabel: {
     textAlign: "center",
@@ -81,10 +81,13 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "1.2em",
   },
   imageContainer: {
-    background: "radial-gradient(#000000ff, #00000066)",
+    background: "radial-gradient(#00000066, #00000022)",
     width: "150px",
   },
   image: {
+    display: "block",
+  },
+  blendedImage: {
     mixBlendMode: "lighten",
     display: "block",
   },
@@ -103,5 +106,5 @@ const rarity = (rarity: ItemTypes.Rarity) => {
     Premium: "#239f5a",
   };
 
-  return { background: colors[rarity] };
+  return { color: colors[rarity] };
 };
