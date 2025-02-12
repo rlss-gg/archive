@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@rlss-gg/items": "^1.19.1",
+    "@rlss-gg/items": "^1.19.2",
     "next": "^15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

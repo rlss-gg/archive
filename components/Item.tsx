@@ -106,6 +106,7 @@ const rarity = (rarity: ItemTypes.Rarity) => {
     Luxury: "#c16804",
     "Black Market": "#73378f",
     Premium: "#239f5a",
+    Developer: "#616264",
   };
 
   return { color: colors[rarity] };
