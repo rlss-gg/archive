@@ -9,16 +9,17 @@ type HeaderProps = {
 
 export default function Header(props: HeaderProps) {
   const routes = {
-    Avatars: "avatars",
-    Banners: "banners",
-    Bodies: "bodies",
-    Decals: "decals",
-    "Goal Explosions": "goal-explosions",
-    "Rocket Boosts": "rocket-boosts",
-    Stickers: "stickers",
-    Titles: "titles",
-    Toppers: "toppers",
-    Wheels: "wheels",
+    New: "categories/new",
+    Avatars: "items/avatars",
+    Banners: "items/banners",
+    Bodies: "items/bodies",
+    Decals: "items/decals",
+    "Goal Explosions": "items/goal-explosions",
+    "Rocket Boosts": "items/rocket-boosts",
+    Stickers: "items/stickers",
+    Titles: "items/titles",
+    Toppers: "items/toppers",
+    Wheels: "items/wheels",
   };
 
   return (
@@ -41,7 +42,7 @@ export default function Header(props: HeaderProps) {
                 : styles.a
             }
             key={route}
-            href={`/items/${route}`}
+            href={"/" + route}
           >
             {name}
           </a>
