@@ -26,7 +26,7 @@ export default function Avatars() {
         Items.banners.S20Gold,
         Items.banners.S20Platinum,
         Items.banners.S20Diamond,
-        Items.banners.S20GrandChampion,
+        Items.banners.S20Champion,
         Items.banners.S20GrandChampion,
         Items.stickers.SOS,
         Items.stickers.Great,
