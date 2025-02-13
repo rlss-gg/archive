@@ -31,6 +31,12 @@ export default function Avatars() {
         Items.stickers.SOS,
         Items.stickers.Great,
         Items.stickers.AstroDoggo,
+        Items.titles.MilkyWayfarer,
+        Items.titles.ZeroGravity,
+        Items.titles.LightyearsAhead,
+        Items.titles.CarMeMaybe,
+        Items.titles.RightOnTime,
+        Items.titles.ThisIsNotATitle,
       ]}
     />
   );
