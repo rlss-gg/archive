@@ -36,6 +36,7 @@ export default function Avatars() {
         Items.titles.EggHunter,
         Items.titles.ElMariachi,
         Items.titles.MamasPride,
+        Items.titles.Sorry,
       ]}
     />
   );
